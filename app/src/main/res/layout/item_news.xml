@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/cardview_light_background"
+    app:cardCornerRadius="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/item_news_head"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/default_img"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="a"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_news_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center|left"
+                android:singleLine="true"
+                android:text="a"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_news_num_recom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|bottom"
+                android:text="aaaaa"
+                android:textColor="#333333"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
