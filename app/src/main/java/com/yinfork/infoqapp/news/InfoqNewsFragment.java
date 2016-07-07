@@ -46,13 +46,29 @@ public class InfoqNewsFragment extends Fragment{
     private String mUrl = DEFAULT_URL;
     private String mType = DEFAULT_TYPE;
 
-    public InfoqNewsFragment(String url,String type){
-        if(null != url){
-            mUrl = url;
-        }
+    public static InfoqNewsFragment newInstance(String url, String type) {
+        InfoqNewsFragment newFragment = new InfoqNewsFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        bundle.putString("type", type);
+        newFragment.setArguments(bundle);
+        return newFragment;
+    }
 
-        if(null != type){
-            mType = type;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        if (args != null) {
+            String url = args.getString("url");
+            String type = args.getString("url");
+
+            if(null != url){
+                mUrl = url;
+            }
+            if(null != type){
+                mType = type;
+            }
         }
         mLoader = new NewsLoader(mType);
     }
@@ -134,8 +150,6 @@ public class InfoqNewsFragment extends Fragment{
             mHandler.removeCallbacks(null);
         }
     }
-
-
 
     private void loadLocalData(){
         Log.d(TAG, mType + " loadLocalData");

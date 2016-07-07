@@ -67,9 +67,9 @@ public class MainFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             if (position == news.length - 1) {
-                return new InfoqVideoFragment(news[position][1]);
+                return InfoqVideoFragment.newInstance(news[position][1]);
             } else {
-                return new InfoqNewsFragment(news[position][1],news[position][0]);
+                return InfoqNewsFragment.newInstance(news[position][1],news[position][0]);
             }
         }
 

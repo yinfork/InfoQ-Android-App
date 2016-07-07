@@ -18,9 +18,23 @@ public class InfoqVideoFragment extends BaseInfoqFragment {
 
     private String mUrl = "http://www.infoq.com/cn/presentations/";
 
-    public InfoqVideoFragment(String url){
-        if(null != url){
-            mUrl = url;
+    public static InfoqVideoFragment newInstance(String url) {
+        InfoqVideoFragment newFragment = new InfoqVideoFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        newFragment.setArguments(bundle);
+        return newFragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        if (args != null) {
+            String url = args.getString("url");
+            if(null != url){
+                mUrl = url;
+            }
         }
     }
 
