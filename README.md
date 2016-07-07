@@ -12,19 +12,23 @@
 
 
 ## Screenshot
-![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/1.jpg)
+![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/1.png)
 
 ----
 
-![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/2.jpg)
+![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/2.png)
 
 ----
 
-![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/3.jpg)
+![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/3.png)
 
 ----
 
-![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/4.jpg)
+![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/4.png)
+
+----
+
+![](https://github.com/yinfork/InfoQ-Android-App/blob/master/Screenshot/5.png)
 
 		
 ## Download

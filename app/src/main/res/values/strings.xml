@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">InfoQ</string>
-    <string name="navigation_view_header_title">Email: yinfork@foxmail.com</string>
+
+    <string name="author_email">Email: yinfork@foxmail.com</string>
+    <string name="author_github">Github: https://github.com/yinfork/InfoQ-Android-App</string>
+
 
     <string name="foot_view_loading">正在加载</string>
     <string name="foot_view_error">加载超时,点击重试</string>
