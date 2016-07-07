@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
     <!-- 下拉刷新时，颜色值 -->
     <color name="swiperefresh_color1">@color/colorAccent</color>

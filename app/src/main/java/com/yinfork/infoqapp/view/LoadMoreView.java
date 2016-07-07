@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yinfork.infoqapp.R;
@@ -14,7 +15,7 @@ import com.yinfork.infoqapp.R;
 /**
  * Created by yinjianhua on 16/6/20.
  */
-public class LoadMoreView extends LinearLayout {
+public class LoadMoreView extends RelativeLayout {
     private static final String TAG = "LoadMoreView";
 
     public static final int INVISIBILY_MODE = 99;
@@ -44,11 +45,9 @@ public class LoadMoreView extends LinearLayout {
     private void initLayout(Context context){
         Log.d(TAG,"initLayout");
         LayoutInflater.from(context).inflate(R.layout.view_loadmore, this);
-        setOrientation(LinearLayout.HORIZONTAL);
-        setGravity(Gravity.CENTER);
 
-        mProcessBar = findViewById(R.id.item_news_progressbar);
-        mLoadingText = (TextView) findViewById(R.id.item_news_message);
+        mProcessBar = findViewById(R.id.progressbar);
+        mLoadingText = (TextView) findViewById(R.id.message);
         setLoadingMode(INVISIBILY_MODE);
     }
 
@@ -69,8 +68,8 @@ public class LoadMoreView extends LinearLayout {
                 break;
 
             case INVISIBILY_MODE:
-                mProcessBar.setVisibility(GONE);
-                mLoadingText.setVisibility(GONE);
+                mProcessBar.setVisibility(INVISIBLE);
+                mLoadingText.setVisibility(INVISIBLE);
                 setOnClickListener(null);
                 break;
         }

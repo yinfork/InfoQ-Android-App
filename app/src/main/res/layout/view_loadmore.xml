@@ -4,20 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.pnikosis.materialishprogress.ProgressWheel
-        android:id="@+id/item_news_progressbar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:matProg_barColor="#5588FF"
-        app:matProg_progressIndeterminate="true" />
-
-    <TextView
-        android:id="@+id/item_news_message"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:textColor="#000000"
-        android:textSize="15sp" />
+        android:minHeight="60dp"
+        android:layout_centerInParent="true">
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progressbar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            app:matProg_barColor="@color/colorPrimary"
+            app:matProg_progressIndeterminate="true" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minHeight="60dp"
+            android:layout_toRightOf="@id/progressbar"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center"/>
+    </RelativeLayout>
 </merge>
