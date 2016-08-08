@@ -21,6 +21,7 @@ import com.yinfork.infoqapp.beans.NewsBean;
 import com.yinfork.infoqapp.detail.NewsInfoActivity;
 import com.yinfork.infoqapp.http.request.BaseRequest;
 import com.yinfork.infoqapp.http.request.NewsRequest;
+import com.yinfork.infoqapp.loader.LoaderListener;
 import com.yinfork.infoqapp.loader.NewsLoader;
 import com.yinfork.infoqapp.view.LoadMoreView;
 
@@ -70,7 +71,7 @@ public class InfoqNewsFragment extends Fragment{
                 mType = type;
             }
         }
-        mLoader = new NewsLoader(mType);
+        mLoader = new NewsLoader(mUrl,mType);
     }
 
     @Nullable
@@ -154,7 +155,7 @@ public class InfoqNewsFragment extends Fragment{
     private void loadLocalData(){
         Log.d(TAG, mType + " loadLocalData");
 
-        mLoader.loadLocalData(new NewsLoader.LoaderListener() {
+        mLoader.loadLocalData(new LoaderListener<List<NewsBean>>() {
             @Override
             public void onSuccess(List<NewsBean> data) {
                 Log.d(TAG, mType + " loadLocalData Success");
@@ -204,7 +205,7 @@ public class InfoqNewsFragment extends Fragment{
     private void refresh(){
         String url = getUrl();
 
-        mLoader.refresh(url, new NewsLoader.LoaderListener() {
+        mLoader.refresh(new LoaderListener<List<NewsBean>>() {
             @Override
             public void onSuccess(List<NewsBean> data) {
                 Log.d(TAG, mType + " refresh onSuccess");
@@ -254,7 +255,7 @@ public class InfoqNewsFragment extends Fragment{
         mPage += 15;
         url = url + mPage;
 
-        mLoader.loadMore(url, mPage - 15, 15, new NewsLoader.LoaderListener() {
+        mLoader.loadMore(mPage - 15, 15, new LoaderListener<List<NewsBean>>() {
             @Override
             public void onSuccess(List<NewsBean> data) {
                 Log.d(TAG, mType + " loadMore onSuccess");
@@ -275,8 +276,5 @@ public class InfoqNewsFragment extends Fragment{
         return mUrl;
     }
 
-    protected BaseRequest getRequest() {
-        return new NewsRequest();
-    }
 
 }
